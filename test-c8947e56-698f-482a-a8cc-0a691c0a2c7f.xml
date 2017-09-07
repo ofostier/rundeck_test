@@ -1,0 +1,48 @@
+<joblist>
+  <job>
+    <description>ls /</description>
+    <dispatch>
+      <excludePrecedence>true</excludePrecedence>
+      <keepgoing>false</keepgoing>
+      <rankOrder>ascending</rankOrder>
+      <successOnEmptyNodeFilter>true</successOnEmptyNodeFilter>
+      <threadcount>1</threadcount>
+    </dispatch>
+    <executionEnabled>true</executionEnabled>
+    <id>c8947e56-698f-482a-a8cc-0a691c0a2c7f</id>
+    <loglevel>INFO</loglevel>
+    <name>test</name>
+    <nodeFilterEditable>false</nodeFilterEditable>
+    <nodefilters>
+      <filter>name: d11appdocker-1.external.spir.fr</filter>
+    </nodefilters>
+    <nodesSelectedByDefault>true</nodesSelectedByDefault>
+    <scheduleEnabled>true</scheduleEnabled>
+    <sequence keepgoing='false' strategy='node-first'>
+      <command>
+        <description>step 1</description>
+        <exec>ls /</exec>
+        <plugins>
+          <LogFilter type='quiet-output'>
+            <config>
+              <loglevel>verbose</loglevel>
+              <matchLoglevel>error</matchLoglevel>
+              <quietMatch>false</quietMatch>
+              <regex>home</regex>
+            </config>
+          </LogFilter>
+        </plugins>
+      </command>
+      <pluginConfig>
+        <LogFilter type='highlight-output'>
+          <config>
+            <fgcolor>red</fgcolor>
+            <mode>bold</mode>
+            <regex>home</regex>
+          </config>
+        </LogFilter>
+      </pluginConfig>
+    </sequence>
+    <uuid>c8947e56-698f-482a-a8cc-0a691c0a2c7f</uuid>
+  </job>
+</joblist>
